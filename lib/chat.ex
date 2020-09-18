@@ -3,8 +3,7 @@ defmodule Chat do
 
   def start(_, _) do
     strategy = :one_for_all
-    children = [
-    ]
+    children = []
 
     Supervisor.start_link(children, strategy: strategy, name: __MODULE__)
   end
