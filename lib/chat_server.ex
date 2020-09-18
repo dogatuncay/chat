@@ -99,13 +99,13 @@ defmodule ChatServer do
     initial_state = %State{
       rooms: %{
         "general" => Room.new_public_room("general"),
-        "elixir" => Room.new_private_room("elixir", ["doga"]),
-        Room.private_chat_key("doga", "nathan") =>
-          Room.new_private_chat("doga", "nathan")
-          |> Room.push_message(Message.new("doga", "how are you?"))
-          |> Room.push_message(Message.new("nathan", "i am good. how about yourself?"))
-          |> Room.push_message(Message.new("doga", "what is good? I don't know english"))
-          |> Room.push_message(Message.new("nathan", "eggplant"))
+        "elixir" => Room.new_private_room("elixir", ["bob"]),
+        Room.private_chat_key("bob", "alice") =>
+          Room.new_private_chat("bob", "alice")
+          |> Room.push_message(Message.new("bob", "how are you?"))
+          |> Room.push_message(Message.new("alice", "i am good. how about yourself?"))
+          |> Room.push_message(Message.new("bob", "what is good?"))
+          |> Room.push_message(Message.new("alice", "eggplant"))
       },
       users: %{}
     }
